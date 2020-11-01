@@ -114,7 +114,7 @@ Présentation du projet
       </p>
 
       <h3>
-        Régression ou classification 
+        Régression ou classification ?
       </H3>
 
       <p>
@@ -161,12 +161,24 @@ Présentation du projet
       2 choix de métrique s'offrent à nous :
     </P>
      <li>
-       La RMSE :
+       La RMSE (Root Mean Square Error): C'est la racine de la moyenne des différences au carré. L'avantage avec cette 
+       métrique est qu'elle donne plus de poids aux grandes erreurs. Elle est donc plus utile lorsque l'on souhaite éviter 
+       le plus possible des grandes erreurs.
     </li>
     
     <li>
-    La MAE (Mean Absolute Error) :
+    La MAE (Mean Absolute Error) : C'est tout simplement la moyenne des différences entre la note prédite et la note réelle. 
+      Cette métrique donne donc le même poids à chaque différence.
     </li>
+    
+    <p>
+      Nous avons fait le choix d'utiliser ces deux métriques complémentaires. Il conviendra simplement de ne pas les comparer 
+      car la RMSE sera toujours égale (lorsque toutes les erreurs ont la même magnitude) ou supérieure à la MAE. 
+    </p>
+    
+    <p>
+      Le modèle qui aura le plus petit score de MAE et de RMSE sera le plus performant et celui qu'il faura choisir.
+    </p>
     
     
     
