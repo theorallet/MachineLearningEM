@@ -34,6 +34,15 @@ p {
   font-family: "Fira Sans", sans-serif;
 }
 
+li {
+  text-align: justify;
+  font-family: "Fira Sans", sans-serif;
+}
+
+figcaption {
+  text-align: centered
+}
+
 hr {
   border-top: 2px solid #eb1a20;
 }
