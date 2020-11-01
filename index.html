@@ -28,218 +28,242 @@
   </head>
 
   <body>
-
     <div class="container">
       <h1>
         Projet Intelligence Artificielle : Prédiction des notes NBA 2K
       </h1>
       <hr />
     </div>
-    
-    
-        <div class="container">
-    <h2>
-Présentation du projet
-    </h2>
-          
-          
-         <p>
-        NBA 2K est une série de jeux vidéo de Basket-Ball développée par l'entreprise 2K Sports. A l'instar de FIFA 
-        pour le football, NBA 2K met en scène les 
-        meilleurs joueurs  et les meilleures équipes de la planète qui évoluent en NBA. 
-      </p>
-      <p>
-        En tant que responsable du jeu, je travaille sur un projet d'automatisation  
-        de  la notation  des joueurs présents dans NBA 2K.
-      </p>
-          
+
+    <div class="container">
+      <h2>
+        Présentation du projet
+      </h2>
+
+      <div class="row">
+        <div class="nine columns">
+          <p>
+            NBA 2K est une série de jeux vidéo de Basket-Ball développée par
+            l'entreprise 2K Sports. A l'instar de FIFA pour le football, NBA 2K
+            met en scène les meilleurs joueurs et les meilleures équipes de la
+            planète qui évoluent en NBA.
+          </p>
+
+          <p>
+            En tant que responsable du jeu, je travaille sur un projet
+            d'automatisation de la notation des joueurs présents dans NBA 2K.
+          </p>
+
+          <p>
+            Je m'explique. Afin que e jeu soit le plus proche de la réalité
+            possible, chaque joueur NBA est noté selon son niveau et ses
+            aptitudes. Par exemple, le meilleur joueur actuel,LeBron James, a
+            reçu pour NBA 2K 2021 la meilleure note avec 97/100.
+          </p>
+        </div>
+        <div class=" three columns">
           <figure>
             <img
-              height="250px"
-              src="https://www.tryagame.fr/wp-content/uploads/2017/06/nba2K-780x284.jpg"
+              height="150px"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/2K_Sports_Logo.svg/langfr-280px-2K_Sports_Logo.svg.png"
             />
             <figcaption>
-              Source: NBA 2K
+              Source: Wikipédia
             </figcaption>
           </figure>
-
-      <p>
-        Je  m'explique. Afin que e jeu soit le plus proche de la réalité possible, 
-        chaque joueur NBA est noté selon son niveau et ses aptitudes. Par exemple, 
-        le meilleur joueur actuel,LeBron James, a reçu pour NBA 2K 2021 la meilleure 
-        note avec 97/100. 
-      </p>
+        </div>
+      </div>
 
       <p>
         <b>
-          Mais comment sont choisies les notes ? 
+          Mais comment sont choisies les notes ?
         </b>
-        Chaque année, mon équipe travaille d'arrache-pieds pour afficher des notes 
-        qui se rapprochent le plus du niveau des joueurs. Mais je souhaite automatiser
-        ce travail afin que nous puissions concentrer  nos efforts sur d'autres aspects
-        du jeu.
+        Chaque année, mon équipe travaille d'arrache-pieds pour afficher des
+        notes qui se rapprochent le plus du niveau des joueurs. Mais je souhaite
+        automatiser ce travail afin que nous puissions concentrer nos efforts
+        sur d'autres aspects du jeu.
       </p>
-        
+
       
-    
     </div>
-    
-    <div class="container">
-    
-    
-    <h2>
-      Mise en place du Machine Learning
-    </h2>
-   
-    <h3>
-      Supervised learning ou unsupervised learning ?
-    </h3>
-      <p>
-        C'est la première question à se poser. 
-      </p>
-
-      <p>
-        Tout dépend du Data Set que l'on va utiliser et s'il est labelisé. Dans le cadre de notre projet, 
-        nous allons utiliser 2 Data Set : 
-      </p>
-    
-    <li>
-    Les notes sur NBA 2K de tous les joueurs NBA actuels</li>
-    
-    <li>
-    Les statistiques de ces même joueurs l'année qui précède la notation
-    </li>
-
-    <p>
-   
       
-    </p>
-    <p>
-      Ces deux Data Set seront associés et la note du joueur sera le label des 
-      données statistiques de ce joueur. Par exemple, pour le jeu NBA 2K 2021, 
-      LeBron James a obtenu la note de 97. Cette note de 97 sera le label de 
-      sa ligne statistique sur la saison 2019/2020.
-      </p>
-    
-    <h3>
-      Où trouver ces 2 Data Set ?
-    </h3>
+      <div class="container">
+        <h2>
+          Mise en place du Machine Learning
+        </h2>
 
-      <p>
-        Le premier Data Set avec les notes des joueurs se trouve sur le site 
-        HoopsHype en cliquant ici. Il contient les notes des joueurs de 2014 à 2021.
-      </p>
+        <h3>
+          Supervised learning ou unsupervised learning ?
+        </h3>
+        <p>
+          C'est la première question à se poser.
+        </p>
 
-      <p>
-        Le second Data Set avec les statistiques des joueurs se trouve sur le site
-        Koogleen cliquant ici. Il contient toutes les statistiques de tous les joueurs NBA
-        depuis 1950. Seules les données à partir de la saison 2012/2013 seront utilisées.
-      </p>
-    
-    <h3>
-      Quel travail à faire sur les Data Set ?
-    </h3>
-    
-    <p>
-      Avant d'utiliser les data set, il s'agit de les analyser pour voir s'ils ne peuvent pas être source d'erreur. 
-    </p>
-    
-    <p>
-      Tout d'abord, il faut vérifier qu'il n'y a pas de valeur manquante ou de valeur qui pourrait poser problème.
-      Une valeur catégorielle pourrait par exemple poser problème lors de l'utilisation de certains modules. Ici, dans 
-      le data set dédié aux statistiques, il y a par exemple le poste de jeu du joueur qui est une valeur catégorielle qu'il 
-      faut modifier. Comme au basket-ball, les postes de jeu suivent un ordre numérique logique (Poste 1 pour le meneur, 
-      Poste 2 pour l'arrière, Poste 3 pour l'ailier, Poste 4 pour l'ailier-fort et Poste 5 pour le pivot). Nous pouvons simplement
-      remplacer les noms des postes par leur numéro correspondant.
-    </p>
-    
-    <p>
-      D'autres valeurs peuvent être à modifier comme par exemple la date de naissance du joueur qu'il conviendra de transformer 
-      en l'âge du joueur au moment de la notation.
-    </p>
+        <p>
+          Tout dépend du Data Set que l'on va utiliser et s'il est labelisé.
+          Dans le cadre de notre projet, nous allons utiliser 2 Data Set :
+        </p>
 
-    <p>
-      On peut aussi créer des champs calculés qui nous sembleraient pertinent dans le processus de Machine Learning. Par exemple, on pourrait ajouter
-      un ratio Passes décisives / Perte de balle.
-    </p>
-    
-    <p>
-      Enfin, il faut faire attention au phénomène de Data Leakage. Il s'agit d'une erreur faite par le créateur qui 
-      cause un partage des informations entre le data set d'entrainement et le data set de test. En conséquence, les modèles obtiennent 
-      des très bons scores de validation qui ne correspondent pas du tout à la vraie performance du modèle puisqu'il a accès aux mêmes informations
-      pour la phase d'entrainement et de test.
-    </p>
-    
-      <h3>
-        Régression ou classification ?
-      </H3>
+        <li>
+          Les notes sur NBA 2K de tous les joueurs NBA actuels
+        </li>
 
-      <p>
-        Comme le label est la note du joueur sur le jeu NBA 2K et donc un nombre, on utilisera la régression.
-      </p>
-    
-    <H3>
-      Quels modèle de régression tester ?
-    </H3>
-    
-    <p>
-      La prochaine étape consistera à choisir quel modèle utiliser. Pour cela, nous allons tester les 4 principaux 
-      modèles de régressions.
-    </p>
-    
-    <li>
-    La régression linéaire : L’idée de la régression linéaire est simplement de trouver une ligne qui s’adapte (ou correspond) le mieux aux données. 
-    </li>
-    
-    <li>
-    L'arbre de décision
-    </li>
-    
-    <li>
-    La forêt d'arbres décisionnels
-    </li>
-    
-    <li>
-    Le réseau de neurones
-    </li>
-    
-    <h3>
-      Comment les tester ?
-    </h3>
-    
-    <p>
-      L'idée est de faire marcher chacun de ces modèles en implémentant les valeurs des NBA 2K de 2014 
-      à 2020 et d'évaluer lequel est le plus adapté et le plus performant en mettant en comparaison les 
-      notes obtenues avec le Machine Learning pour NBA 2K21 et les vraies notes de NBA 2K21.
-      Pour cela, il faut choisir une métrique qui mesure l'écart entre la note réelle et la note obtenue. 
-      Cela nous permettra de valider ou non le modèle.
-    </p>
-     <P>
-      2 choix de métrique s'offrent à nous :
-    </P>
-     <li>
-       La RMSE (Root Mean Square Error): C'est la racine de la moyenne des différences au carré. L'avantage avec cette 
-       métrique est qu'elle donne plus de poids aux grandes erreurs. Elle est donc plus utile lorsque l'on souhaite éviter 
-       le plus possible des grandes erreurs.
-    </li>
-    
-    <li>
-    La MAE (Mean Absolute Error) : C'est tout simplement la moyenne des différences entre la note prédite et la note réelle. 
-      Cette métrique donne donc le même poids à chaque différence.
-    </li>
-    
-    <p>
-      Nous avons fait le choix d'utiliser ces deux métriques complémentaires. Il conviendra simplement de ne pas les comparer 
-      car la RMSE sera toujours égale (lorsque toutes les erreurs ont la même magnitude) ou supérieure à la MAE. 
-    </p>
-    
-    <p>
-      Le modèle qui aura le plus petit score de MAE et de RMSE sera le plus performant et celui qu'il faura choisir.
-    </p>
-    
-    <P>
-      
-    </P>
+        <li>
+          Les statistiques de ces même joueurs l'année qui précède la notation
+        </li>
+
+        <p></p>
+        <p>
+          Ces deux Data Set seront associés et la note du joueur sera le label
+          des données statistiques de ce joueur. Par exemple, pour le jeu NBA 2K
+          2021, LeBron James a obtenu la note de 97. Cette note de 97 sera le
+          label de sa ligne statistique sur la saison 2019/2020.
+        </p>
+
+        <h3>
+          Où trouver ces 2 Data Set ?
+        </h3>
+
+        <p>
+          Le premier Data Set avec les notes des joueurs se trouve sur le site
+          HoopsHype en cliquant
+          <a href="https://hoopshype.com/nba2k/2020-2021/"> ici</a>. Il contient
+          les notes des joueurs de 2014 à 2021.
+        </p>
+
+        <p>
+          Le second Data Set avec les statistiques des joueurs se trouve sur le
+          site Koogle en cliquant
+          <a
+            href="https://www.kaggle.com/drgilermo/nba-players-stats?select=Seasons_Stats.csv"
+            >ici</a
+          >. Il contient toutes les statistiques de tous les joueurs NBA depuis
+          1950. Seules les données à partir de la saison 2012/2013 seront
+          utilisées.
+        </p>
+
+        <h3>
+          Quel travail à faire sur les Data Set ?
+        </h3>
+
+        <p>
+          Avant d'utiliser les data set, il s'agit de les analyser pour voir
+          s'ils ne peuvent pas être source d'erreur.
+        </p>
+
+        <p>
+          Tout d'abord, il faut vérifier qu'il n'y a pas de valeur manquante ou
+          de valeur qui pourrait poser problème. Une valeur catégorielle
+          pourrait par exemple poser problème lors de l'utilisation de certains
+          modules. Ici, dans le data set dédié aux statistiques, il y a par
+          exemple le poste de jeu du joueur qui est une valeur catégorielle
+          qu'il faut modifier. Comme au basket-ball, les postes de jeu suivent
+          un ordre numérique logique (Poste 1 pour le meneur, Poste 2 pour
+          l'arrière, Poste 3 pour l'ailier, Poste 4 pour l'ailier-fort et Poste
+          5 pour le pivot). Nous pouvons simplement remplacer les noms des
+          postes par leur numéro correspondant.
+        </p>
+
+        <p>
+          D'autres valeurs peuvent être à modifier comme par exemple la date de
+          naissance du joueur qu'il conviendra de transformer en l'âge du joueur
+          au moment de la notation.
+        </p>
+
+        <p>
+          On peut aussi créer des champs calculés qui nous sembleraient
+          pertinent dans le processus de Machine Learning. Par exemple, on
+          pourrait ajouter un ratio Passes décisives / Perte de balle.
+        </p>
+
+        <p>
+          Enfin, il faut faire attention au phénomène de Data Leakage. Il s'agit
+          d'une erreur faite par le créateur qui cause un partage des
+          informations entre le data set d'entrainement et le data set de test.
+          En conséquence, les modèles obtiennent des très bons scores de
+          validation qui ne correspondent pas du tout à la vraie performance du
+          modèle puisqu'il a accès aux mêmes informations pour la phase
+          d'entrainement et de test.
+        </p>
+
+        <h3>
+          Régression ou classification ?
+        </h3>
+
+        <p>
+          Comme le label est la note du joueur sur le jeu NBA 2K et donc un
+          nombre, on utilisera la régression.
+        </p>
+
+        <h3>
+          Quels modèle de régression tester ?
+        </h3>
+
+        <p>
+          La prochaine étape consistera à choisir quel modèle utiliser. Pour
+          cela, nous allons tester les 4 principaux modèles de régressions.
+        </p>
+
+        <li>
+          La régression linéaire : L’idée de la régression linéaire est
+          simplement de trouver une ligne qui s’adapte (ou correspond) le mieux
+          aux données.
+        </li>
+
+        <li>
+          L'arbre de décision
+        </li>
+
+        <li>
+          La forêt d'arbres décisionnels
+        </li>
+
+        <li>
+          Le réseau de neurones
+        </li>
+
+        <h3>
+          Comment les tester ?
+        </h3>
+
+        <p>
+          L'idée est de faire marcher chacun de ces modèles en implémentant les
+          valeurs des NBA 2K de 2014 à 2020 et d'évaluer lequel est le plus
+          adapté et le plus performant en mettant en comparaison les notes
+          obtenues avec le Machine Learning pour NBA 2K21 et les vraies notes de
+          NBA 2K21. Pour cela, il faut choisir une métrique qui mesure l'écart
+          entre la note réelle et la note obtenue. Cela nous permettra de
+          valider ou non le modèle.
+        </p>
+        <p>
+          2 choix de métrique s'offrent à nous :
+        </p>
+        <li>
+          La RMSE (Root Mean Square Error): C'est la racine de la moyenne des
+          différences au carré. L'avantage avec cette métrique est qu'elle donne
+          plus de poids aux grandes erreurs. Elle est donc plus utile lorsque
+          l'on souhaite éviter le plus possible des grandes erreurs.
+        </li>
+
+        <li>
+          La MAE (Mean Absolute Error) : C'est tout simplement la moyenne des
+          différences entre la note prédite et la note réelle. Cette métrique
+          donne donc le même poids à chaque différence.
+        </li>
+
+        <p>
+          Nous avons fait le choix d'utiliser ces deux métriques
+          complémentaires. Il conviendra simplement de ne pas les comparer car
+          la RMSE sera toujours égale (lorsque toutes les erreurs ont la même
+          magnitude) ou supérieure à la MAE.
+        </p>
+
+        <p>
+          Le modèle qui aura le plus petit score de MAE et de RMSE sera le plus
+          performant et celui qu'il faura choisir.
+        </p>
+
+        <p></p>
+      </div>
   </body>
 </html>
-
