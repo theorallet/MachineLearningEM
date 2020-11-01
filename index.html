@@ -126,9 +126,27 @@ Présentation du projet
       Une valeur catégorielle pourrait par exemple poser problème lors de l'utilisation de certains modules. Ici, dans 
       le data set dédié aux statistiques, il y a par exemple le poste de jeu du joueur qui est une valeur catégorielle qu'il 
       faut modifier. Comme au basket-ball, les postes de jeu suivent un ordre numérique logique (Poste 1 pour le meneur, 
-      Poste 2 pour l')
+      Poste 2 pour l'arrière, Poste 3 pour l'ailier, Poste 4 pour l'ailier-fort et Poste 5 pour le pivot). Nous pouvons simplement
+      remplacer les noms des postes par leur numéro correspondant.
+    </p>
+    
+    <p>
+      D'autres valeurs peuvent être à modifier comme par exemple la date de naissance du joueur qu'il conviendra de transformer 
+      en l'âge du joueur au moment de la notation.
     </p>
 
+    <p>
+      On peut aussi créer des champs calculés qui nous sembleraient pertinent dans le processus de Machine Learning. Par exemple, on pourrait ajouter
+      un ratio Passes décisives / Perte de balle.
+    </p>
+    
+    <p>
+      Enfin, il faut faire attention au phénomène de Data Leakage. Il s'agit d'une erreur faite par le créateur qui 
+      cause un partage des informations entre le data set d'entrainement et le data set de test. En conséquence, les modèles obtiennent 
+      des très bons scores de validation qui ne correspondent pas du tout à la vraie performance du modèle puisqu'il a accès aux mêmes informations
+      pour la phase d'entrainement et de test.
+    </p>
+    
       <h3>
         Régression ou classification ?
       </H3>
